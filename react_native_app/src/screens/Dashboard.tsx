@@ -9,6 +9,7 @@ import VisitedButton from '../components/VisitedButton';
 import { Navigation } from '../types';
 import { View, SectionList,SafeAreaView, Image, StyleSheet,Text} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { white } from 'react-native-paper/lib/typescript/styles/colors';
 
 
 
@@ -43,9 +44,9 @@ const Dashboard = ({ navigation }: Props) => {
           style={styles.itemPhoto}
           resizeMode="cover"
         />
-        <Button mode="contained" onPress={_onSectionPressed}> GO</Button>
+        <Button mode="contained" onPress={_onSectionPressed} style > GO</Button>
       </View>
-    );
+    );       
   };
   const _onSectionPressed = () => {
     navigation.navigate('PlaylistScreen');
@@ -55,7 +56,7 @@ const Dashboard = ({ navigation }: Props) => {
   <Background>
     <View style={styles.container}>
       <StatusBar style="light" />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1}} >
         <SectionList
           contentContainerStyle={{ paddingHorizontal: 10 }}
           stickySectionHeadersEnabled={false}
@@ -150,12 +151,13 @@ const styles = StyleSheet.create({
 const closed_styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fffffff',
   },
+  //#
   sectionHeader: {
     fontWeight: '800',
     fontSize: 18,
-    color: '#D293B2',
+    color: '#99badd',
     marginTop: 15,
     marginBottom: 5,
   },
@@ -163,7 +165,7 @@ const closed_styles = StyleSheet.create({
     margin: 8,
     fontWeight: '600',
     fontSize: 16,
-    color: '#B5D5A7'
+    color: '#99badd'
   },
   itemPhoto: {
     width: 300,
@@ -175,7 +177,7 @@ const closed_styles = StyleSheet.create({
 
   },
   itemText: {
-    color: 'rgba(255, 255, 255, 0.5)',
+    color: '#99badd',
     marginTop: 5,
   },
 
@@ -183,32 +185,3 @@ const closed_styles = StyleSheet.create({
 
 
 export default memo(Dashboard);
-
-// bad practice I know
-// //return (
-//   <View>
-//   <View style={styles.container}>
-//     <View style={{ backgroundColor: '#529FF3', margin: 10 }}>
-//       {!!item.text && (
-//         <Text
-//           style={{
-//             paddingVertical: 10,
-//             fontSize: 15,
-//             paddingStart: 5,
-//             paddingEnd: 16,
-//             color: 'black',
-//           }}>
-//           {item.text}
-//         </Text>
-//       )}
-//       {item.uri && (
-//         <Image
-//           source={{ uri: item.uri }}
-//           style={{ height: 100, width: 100 }}
-//         />
-//       )}
-//        <Button mode="contained" onPress={_onSectionPressed}> GO</Button>
-//     </View>
-//   </View>
-// </View>
-// )

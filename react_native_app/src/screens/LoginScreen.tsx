@@ -68,7 +68,7 @@ const LoginScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       </View>
 
-      <Button mode="contained" onPress={_onLoginPressed}>
+      <Button mode="contained" onPress={_onLoginPressed} style= {{backgroundColor:'#FFD966'}}>
         Login
       </Button>
 

@@ -10,15 +10,17 @@ import { Navigation } from '../types';
 import Option from '../components/Option';
 import Questions from './questions.json';
 import { theme } from '../core/theme';
+import { Center } from 'native-base';
+import { background } from 'native-base/lib/typescript/theme/styled-system';
 type Props = {
   navigation: Navigation;
 };
 
 const QuizScreen = ({ navigation,index }) => {
-  return(<Background><View>
-    <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
+  return(<Background><View >
+    <View style={{ justifyContent: 'space-between', flexDirection: 'row'}} >
       <Text style={styles.questionNo}>
-        {index + 1}/{Questions.questions.length}
+        Question {index + 1} OF {Questions.questions.length}
       </Text>
     </View>
     <Text style={styles.Question}>{Questions.questions[index].question}</Text>
@@ -40,10 +42,12 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    marginTop: 4,
+    marginTop: 4
   },
   Question: {
-    color: theme.colors.secondary,
+    fontSize: 30,
+    padding: 5, 
+    color: '#000000',
   },
   nextButton: {
     fontWeight: 'bold',

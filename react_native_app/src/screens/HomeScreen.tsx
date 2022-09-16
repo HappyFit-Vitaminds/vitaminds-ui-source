@@ -11,16 +11,16 @@ type Props = {
 };
 
 const HomeScreen = ({ navigation }: Props) => (
-  <Background>
+  <Background >
     <Logo />
     {/* <Header>VITAMINDS</Header> */}
     <Paragraph>
       The path to a healthier mind.
     </Paragraph>
-    <Button mode="outlined" onPress={() => navigation.navigate('LoginScreen')} color = '#B5D5A7' >
+    <Button mode="outlined" onPress={() => navigation.navigate('LoginScreen')} color = '#000000' >
       Login
     </Button>
-    <Button mode="outlined" onPress={() => navigation.navigate('RegisterScreen')} color = '#B5D5A7'>
+    <Button mode="outlined" onPress={() => navigation.navigate('RegisterScreen')} color = '#000000'>
       Sign Up
     </Button>
   </Background>

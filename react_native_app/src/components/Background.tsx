@@ -1,3 +1,4 @@
+import { background } from 'native-base/lib/typescript/theme/styled-system';
 import React, { memo } from 'react';
 import {
   ImageBackground,
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const Background = ({ children }: Props) => (
-  <ImageBackground
+  <ImageBackground 
     source={require('../assets/background_dot.png')}
     resizeMode="repeat"
     style={styles.background}
@@ -25,6 +26,8 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     width: '100%',
+    color: '#ffffff',
+   backgroundColor: '#B5D5A7'
   },
   container: {
     flex: 1,
