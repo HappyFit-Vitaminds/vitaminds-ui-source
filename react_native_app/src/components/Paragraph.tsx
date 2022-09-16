@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     lineHeight: 26,
-    color: theme.colors.secondary,
+    fontFamily: 'San Francisco',
+    fontWeight: 'bold',
+    color: '#D293B2​',
     textAlign: 'center',
     marginBottom: 14,
   },

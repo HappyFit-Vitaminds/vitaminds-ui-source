@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    marginTop: 4
+    marginTop: 4,
   },
   Question: {
     fontSize: 30,
-    padding: 5, 
-    color: '#000000',
+    margin: 5, 
+    color: '#000000'
   },
   nextButton: {
     fontWeight: 'bold',
