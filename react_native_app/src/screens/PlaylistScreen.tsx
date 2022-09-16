@@ -29,11 +29,12 @@ const PlaylistScreen = ({ navigation }: Props) => (
     <Paragraph>
       Listen to the audio and note how well you can vividly imagine the scenario
     </Paragraph>
-    <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>Logout</Button>
     <View style={styles.container}>
       
       <StatusBar style="light" />
       <QuizScreen navigation= {navigation} index= {0}/>
+      <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>Logout</Button>
+
     </View>
     <BackButton goBack={() => navigation.navigate('Dashboard')} />
   </Background>
