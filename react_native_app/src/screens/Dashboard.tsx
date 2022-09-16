@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Paragraph from '../components/Paragraph';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import VisitedButton from '../components/VisitedButton';
 import { Navigation } from '../types';
 import { View, SectionList,SafeAreaView, Image, StyleSheet,Text} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -20,6 +21,20 @@ let todayDate = today.toString().substring(0, 16);
 
 const Dashboard = ({ navigation }: Props) => {
   const ListItem = ({ item }) => {
+    if(item.key == '1' || item.key == '2' || item.key == '3'){
+      return (
+          <View>
+            <h4 style={closed_styles.item}>{item.text}</h4>
+            <Image
+              source={{ uri: item.uri, }}
+              style={closed_styles.itemPhoto}
+              resizeMode="cover"
+            />
+            <VisitedButton mode="contained" onPress={_onSectionPressed}> GO</VisitedButton>
+          </View>
+      );
+    }
+    
     return (
       <View>
         <h4 style={styles.item}>{item.text}</h4>
@@ -132,5 +147,68 @@ const styles = StyleSheet.create({
 
 });
 
+const closed_styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  sectionHeader: {
+    fontWeight: '800',
+    fontSize: 18,
+    color: '#D293B2',
+    marginTop: 15,
+    marginBottom: 5,
+  },
+  item: {
+    margin: 8,
+    fontWeight: '600',
+    fontSize: 16,
+    color: '#B5D5A7'
+  },
+  itemPhoto: {
+    width: 300,
+    height: 150,
+    borderRadius: 50,
+    overflow: "hidden",
+    borderWidth: 3,
+    borderColor: '#D293B2'
+
+  },
+  itemText: {
+    color: 'rgba(255, 255, 255, 0.5)',
+    marginTop: 5,
+  },
+
+});
+
 
 export default memo(Dashboard);
+
+// bad practice I know
+// //return (
+//   <View>
+//   <View style={styles.container}>
+//     <View style={{ backgroundColor: '#529FF3', margin: 10 }}>
+//       {!!item.text && (
+//         <Text
+//           style={{
+//             paddingVertical: 10,
+//             fontSize: 15,
+//             paddingStart: 5,
+//             paddingEnd: 16,
+//             color: 'black',
+//           }}>
+//           {item.text}
+//         </Text>
+//       )}
+//       {item.uri && (
+//         <Image
+//           source={{ uri: item.uri }}
+//           style={{ height: 100, width: 100 }}
+//         />
+//       )}
+//        <Button mode="contained" onPress={_onSectionPressed}> GO</Button>
+//     </View>
+//   </View>
+// </View>
+// )
