@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: build
-          path: react_native_app/build
+          path: react_native_app/web-build
 
   deploy-gcr:
     name: Deploy to GCR
@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: build
-          path: react_native_app/build
+          path: react_native_app/web-build
 
       - name: Setup GCloud Auth
         id: auth
