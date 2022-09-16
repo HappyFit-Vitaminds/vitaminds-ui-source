@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: build
-          path: web-build
+          path: react_native_app/build
 
   deploy-gcr:
     name: Deploy to GCR
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .
+        working-directory: ./react_native_app
 
     steps:
       - name: Checkout Repo
@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: build
-          path: web-build
+          path: react_native_app/build
 
       - name: Setup GCloud Auth
         id: auth
